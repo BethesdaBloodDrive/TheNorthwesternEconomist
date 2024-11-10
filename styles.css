@@ -357,3 +357,86 @@ footer {
     font-style: italic;
     text-align: center;
 }
+
+@media (max-width: 480px) {
+    .hero-header {
+        height: 40vh; /* Reduce height further for mobile */
+        padding: 20px;
+    }
+
+    .hero-header h1 {
+        font-size: 2rem;
+    }
+
+    .hero-header p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .about-section h2 {
+        font-size: 2rem;
+    }
+
+    .about-section p {
+        font-size: 0.85rem;
+        padding: 0 10px; /* Add padding for better readability */
+    }
+
+    .slideshow-container {
+        width: 90%; /* Slightly smaller slideshow for mobile */
+    }
+
+    .slide img {
+        height: auto; /* Maintain proportional image height */
+    }
+
+    .featured-articles .featured-grid {
+        flex-direction: column;
+    }
+
+    .article-card {
+        width: 90%; /* Ensure article cards are responsive */
+        margin-bottom: 20px;
+    }
+
+    .filter-section .filters {
+        flex-direction: column; /* Stack filter options */
+        gap: 5px;
+    }
+
+    .stats-grid {
+        flex-direction: column; /* Stack stats vertically */
+    }
+
+    .stat-box {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .gallery-grid img {
+        width: 100%; /* Full-width gallery images */
+        max-width: 100%; /* Prevent overflow */
+    }
+
+    .button-container .btn {
+        font-size: 0.8rem; /* Smaller buttons for mobile */
+        padding: 8px 16px;
+    }
+
+    .gallery-caption {
+        font-size: 0.9rem; /* Adjust caption size for readability */
+        padding: 0 10px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    .social-links a img {
+        width: 25px;
+        height: 25px;
+    }
+}
