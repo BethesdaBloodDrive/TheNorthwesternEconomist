@@ -7,111 +7,152 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section with Unique ID -->
-    <header id="home">
-        <div class="container">
+
+    <!-- Hero Header with Background Image -->
+    <header class="hero-header" style="background-image: url('images/banner.png'); background-size: cover; background-position: center;">
+        <div class="hero-overlay">
             <h1>The Northwestern Economist</h1>
             <p>Insightful Analysis and Research in Economics</p>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#publications">Recent Publications</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <a href="#about" class="cta-button">Learn More</a>
         </div>
     </header>
 
-    <!-- About Section with Unique ID -->
-    <section id="about" class="container">
-        <h2>About Us</h2>
-        <p>Welcome to The Northwestern Economist, a student-led platform dedicated to publishing thought-provoking articles and journals on economics. We explore both local and global economic trends and offer in-depth analysis from Northwestern University’s economics community.</p>
-    </section>
+    <!-- Navigation Menu -->
+	<nav class="main-nav">
+		<div class="container">
+			<a href="#about">About</a>
+			<a href="Stubs Homepage/stubs.html">Stubs</a>
+			<a href="Publications Homepage/publications.html">Main Articles</a>
+			<a href="#publications">Publications</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#contact">Contact</a>
+		</div>
+	</nav>
 
-    <!-- Filter Options -->
-    <section class="filter-section container">
-        <h2>Filter Articles by Topic</h2>
-        <div>
-            <label><input type="checkbox" name="filter" value="inflation" onchange="filterArticles()"> Inflation</label>
-            <label><input type="checkbox" name="filter" value="healthcare" onchange="filterArticles()"> Healthcare</label>
-            <label><input type="checkbox" name="filter" value="emerging markets" onchange="filterArticles()"> Emerging Markets</label>
-            <label><input type="checkbox" name="filter" value="sustainability" onchange="filterArticles()"> Sustainability</label>
-        </div>
-    </section>
-
-    <!-- Publications Section with Unique ID -->
-    <section id="publications" class="container">
-        <h2>Recent Publications</h2>
-        <div id="articlesList" class="articles">
-            <!-- Article 1 -->
-            <article class="article" data-tags="inflation">
-                <img src="images/inflation-thefederalreserve.png" alt="Understanding Inflation">
-                <div class="article-content">
-                    <h3><a href="article-inflation.html">Understanding Inflation: Causes and Effects</a></h3>
-                    <p class="date">Published on October 25, 2024</p>
-                    <p>An in-depth analysis of the factors driving inflation, its impact on different sectors, and the policy responses used to manage it.</p>
-                </div>
-            </article>
-
-            <!-- Article 2 -->
-            <article class="article" data-tags="healthcare">
-                <img src="images/stethescope.png" alt="Healthcare Economics">
-                <div class="article-content">
-                    <h3><a href="article-healthcare.html">The Economics of Healthcare</a></h3>
-                    <p class="date">Published on November 2, 2024</p>
-                    <p>An exploration of the economic challenges in healthcare, examining policy and potential solutions for sustainable systems.</p>
-                </div>
-            </article>
-
-            <!-- Article 3 -->
-            <article class="article" data-tags="emerging markets">
-                <img src="https://via.placeholder.com/300x150" alt="Emerging Markets">
-                <div class="article-content">
-                    <h3><a href="article-emerging-markets.html">The Future of Emerging Markets</a></h3>
-                    <p class="date">Published on November 3, 2024</p>
-                    <p>An analysis of the factors affecting emerging markets, including currency challenges, trade policies, and global economic conditions.</p>
-                </div>
-            </article>
-
-            <!-- Article 4 -->
-            <article class="article" data-tags="sustainability">
-                <img src="https://via.placeholder.com/300x150" alt="Sustainable Economy">
-                <div class="article-content">
-                    <h3><a href="article-sustainable-economy.html">Building a Sustainable Economy</a></h3>
-                    <p class="date">Published on November 4, 2024</p>
-                    <p>Exploring the steps needed to transition towards a more sustainable economic model and the challenges ahead.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Contact Section with Unique ID -->
-    <section id="contact" class="container">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to contribute? Reach out to us at <a href="mailto:northwesterneconomist@gmail.com">northwesterneconomist@gmail.com</a>.</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 The Northwestern Economist. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript for Filtering Functionality -->
-    <script>
-        function filterArticles() {
-            const selectedTags = Array.from(document.querySelectorAll('input[name="filter"]:checked')).map(checkbox => checkbox.value);
-            const articles = document.querySelectorAll('#articlesList .article');
+    <!-- About Section with Slideshow and Caption -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to The Northwestern Economist, a student-led platform publishing insightful articles on economic topics ranging from local issues to global trends. Our mission is to make economics accessible and relevant to our readers.</p>
             
-            articles.forEach(article => {
-                const tags = article.getAttribute('data-tags').split(' ');
-                if (selectedTags.length === 0 || selectedTags.some(tag => tags.includes(tag))) {
-                    article.style.display = '';
-                } else {
-                    article.style.display = 'none';
-                }
-            });
-        }
-    </script>
+            <div class="slideshow-container">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="images/economicmoodswing.png" alt="Economic Research">
+                    <figcaption>Illustration by Jeff Parker (2010) captures the economic stalemate: Consumers wait for job growth to resume spending, while businesses wait for consumer demand before creating jobs. The cycle highlights the dependency between consumer confidence and business investment in economic recovery.</figcaption>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="images/movingmoney.png" alt="Sustainable Finance">
+                    <figcaption>Cartoon by Red Panels illustrates government intervention in the economy through spending, humorously portraying the simplicity of 'stimulating' prosperity by adding more money to the economy.</figcaption>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="images/cartoonstock.png" alt="Policy Analysis">
+                    <figcaption>Cartoon by Paresh Nath illustrates the chaos and instability of a volatile market, with individuals struggling to hold on as the trend line plummets, symbolizing economic downturns and the impact on people's livelihoods.</figcaption>
+                </div>
+
+                <!-- Left and Right Arrows -->
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+
+            <!-- Button Container Under Title Column -->
+            <div class="button-container">
+                <button class="btn">Subscribe</button>
+                <button class="btn">Read More</button>
+                <button class="btn">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles Section with Decorative Divider -->
+   <section class="featured-articles">
+    <div class="container">
+        <h2>Featured Articles</h2>
+        <hr class="section-divider">
+        <div class="featured-grid">
+            <!-- Stub Article -->
+            <article class="article-card" data-tags="policy recovery">
+                <img src="images/featuredstubinflationimage.jpg" alt="Stub Article">
+                <div class="article-content">
+                    <h3><a href="Actual Stubs/evanstoninflation.html">Policy's Role in Economic Recovery</a></h3>
+                    <p>A brief exploration of how economic policies influence recovery efforts.</p>
+                </div>
+            </article>
+
+            <!-- Main Article -->
+            <article class="article-card" data-tags="global-trends markets">
+                <img src="images/featuredpublicationglobal_marketing_trends.png"  alt="Main Article">
+                <div class="article-content">
+                    <h3><a href="Actual Publications/globalanalysis.html">Global Market Trends in 2024</a></h3>
+                    <p>Analyzing global market trends and their impact on various economies.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+    <!-- Filter Options Section with Styled Checkboxes -->
+    <section class="filter-section">
+        <div class="container">
+            <h2>Explore by Topic</h2>
+            <hr class="section-divider">
+            <div class="filters">
+                <label><input type="checkbox" value="sustainability" onclick="filterArticles()"> Sustainability</label>
+                <label><input type="checkbox" value="healthcare" onclick="filterArticles()"> Healthcare</label>
+                <label><input type="checkbox" value="us economy" onclick="filterArticles()"> US Economy</label>
+                <label><input type="checkbox" value="global economy" onclick="filterArticles()"> Global Economy</label>
+                <label><input type="checkbox" value="emerging markets" onclick="filterArticles()"> Emerging Markets</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section with Iconography -->
+    <section class="quick-stats">
+        <div class="container">
+            <h2>Quick Economic Facts</h2>
+            <hr class="section-divider">
+            <div class="stats-grid">
+                <div class="stat-box">Global inflation reached 4.3% in 2023.</div>
+                <div class="stat-box">Emerging markets projected to grow by 6% annually.</div>
+                <div class="stat-box">US healthcare industry valued at $4 trillion in 2024.</div>
+            </div>
+        </div>
+    </section>
+
+<!-- Gallery Section with Lightbox Option -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2>Gallery</h2>
+        <hr class="section-divider">
+        <div class="gallery-grid">
+            <img src="images/aiimage1homepage.webp" alt="Gallery Image 1" onclick="openLightbox(this)">
+            <img src="images/aiimage2homepage.webp" alt="Gallery Image 2" onclick="openLightbox(this)">
+            <img src="images/aiimage3homepage.webp" alt="Gallery Image 3" onclick="openLightbox(this)">
+        </div>
+        <p class="gallery-caption">The global economy in 2024 stands at a crossroads, demanding bold action and collaborative innovation. As technological advancements reshape industries, financial systems adapt to evolving challenges, and sustainability becomes the cornerstone of progress, the choices we make today will define the future. </p>
+    </div>
+</section>
+
+
+    <!-- Footer with Social Media Links -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 The Northwestern Economist. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/northwesterneconomist" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- External JavaScript file -->
+    <script src="scripts.js"></script>
+
 </body>
 </html>
-
-
